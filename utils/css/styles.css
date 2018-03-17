@@ -5,35 +5,33 @@
     border-radius: 0!important;
 }
 .my-form-check {
-    border-top: 1px solid #999;
-    border-bottom: 1px solid #999;
+    border-top: 1px solid rgb(153, 153, 153, 0.200);
+    border-bottom: 1px solid rgb(153, 153, 153, 0.200);
     background-color: white;
     padding: 10px 30px;
 }
 .checked {
-    border-top: 1px solid red !important;
-    background-color: rgba(184, 184, 184, 0.459) !important;
-    border-bottom: 1px solid red !important;
-}
-.footer.fixed {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    padding: 10px 20px;
-    background: white;
-    border-top: 1px solid #e7eaec;
-    height: 20%;
+    border-top: 1.5px solid rgb(67, 67, 255) !important;
+    background-color: rgba(0, 0, 255, 0.100) !important;
+    border-bottom: 1.5px solid rgb(67, 67, 255) !important;
 }
 .bg-header {
     background: rgb(200, 2, 2);
     padding: 5px 10px 5px 10px;
     font-size: 22px;
+    margin: 0 !important;
 }
 .bg-header2 {
     background: rgb(160, 8, 8);
     padding-right: 20px;
     font-size: 12px;
+}
+.bg-footer {
+    background: rgb(221, 221, 221);
+    min-height: 20%;
+}
+.align-text-center {
+    justify-content: center;
 }
 .search-bg {
     padding: 10px;
@@ -57,8 +55,32 @@
 .card .card-header {
     border: 0 !important;
     background: 0 !important;
+    font-size: 25px;
+    font-weight: normal;
 }
 .card .card-footer {
     border: 0 !important;
     background: 0 !important;
+}
+.card .btn.my-btn {
+    padding: 4px 25px 4px 25px !important;
+}
+.card .btn.my-btn-add-user {
+    width: 150px;
+    margin: 10px;
+    background: #9999993d;
+    border: 1px solid rgb(153, 153, 153, 0.200);
+}
+a:hover {
+    text-decoration: none !important;
+}
+.footer-link {
+    text-decoration: none !important;
+    font-size: 12px !important;
+    color: black !important;
+    padding: 15px !important;
+    font-weight: bold;
+}
+.img-invert-100 {
+    -webkit-filter: invert(100%);
 }

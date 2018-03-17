@@ -18,15 +18,21 @@ function MainFunc($scope) {
         index: undefined
     };
 
-
     $scope.itens = [
         {
-            firstname: 'A1',
-            email: 'teste@teste.com'
+            firstname: 'FirstName MiddleName',
+            lastname: 'LastName',
+            email: 'name.lastname@exxonmobil.com'
         },
         {
-            firstname: 'A2',
-            email: 'teste@testando.com'
+            firstname: 'FirstName MiddleName',
+            lastname: 'LastName',
+            email: 'name.lastname@exxonmobil.com'
+        },
+        {
+            firstname: 'FirstName MiddleName',
+            lastname: 'LastName',
+            email: 'name.lastname@exxonmobil.com'
         }
     ];
 

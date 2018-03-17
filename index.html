@@ -12,21 +12,24 @@
 </head>
 <body  >
     <div class="container-fluid font-weight-light" style="height: 100vh;" >
-        <div class="row mh-75" style="min-height: 75%">
+        <div class="row" style="min-height: 80%">
             <div class="col-sm-2 border-right">
-                <p class="text-center text-white bg-header">Logo</p>
+                <p class="text-center text-white bg-header">ExxonMobil</p>
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Overview<span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="#">Search User<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Reports</a>
+                        <a class="nav-link" href="#">File Management</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Analytics</a>
+                        <a class="nav-link" href="#">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Export</a>
+                        <a class="nav-link" href="#">Tags</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dashboard</a>
                     </li>
                 </ul>
             </div>
@@ -36,7 +39,7 @@
                     <div class="row bg-header2">
                         <div class="col text-right">
                             <div class="dropdown show">
-                                <a class="dropdown-toggle text-white oi oi-globe" style="text-decoration: none; vertical-align: top;" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Firstname Lastname</a>
+                                <a class="dropdown-toggle text-white oi oi-globe" style="vertical-align: center;" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Firstname Lastname</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="#">View Profile</a>
                                     <a class="dropdown-item" href="#">Change Password</a>
@@ -52,7 +55,7 @@
                                 <div class="card-header">
                                     Search User
                                     <div class="float-right">
-                                        <button type="button" class="btn btn-primary btn-sm rounded-0" ng-click="open_form()"
+                                        <button type="button" class="btn btn-primary btn-sm rounded-0 my-btn" ng-click="open_form()"
                                         >+ Add User</button>
                                     </div>
                                 </div>
@@ -80,7 +83,7 @@
                                                         <button type="button" ng-click="update_item($index, item)" class="btn btn-light btn-sm">
                                                             <span class="oi oi-pencil"></span>
                                                         </button>
-                                                        <button type="button" ng-click="remove_item($index)"  class="btn btn-light btn-sm">
+                                                        <button type="button" ng-click="remove_item($index)" ng-  class="btn btn-light btn-sm">
                                                             <span class="oi oi-trash" aria-hidden="true"></span>
                                                         </button>
                                                     </td>
@@ -116,7 +119,7 @@
                                                 
                                                 <div class="form-group col-md-6">
                                                     <label for="email">Email</label>
-                                                    <input type="email" ng-model="form.email" class="form-control" id="email" placeholder="name.lastname@email.com">
+                                                    <input type="email" ng-model="form.email" class="form-control" id="email" placeholder="name.lastname@exxonmobil.com">
                                                     <small id="email" class="form-text text-muted">This is a note about the field</small>
                                                 </div>
                                                 <div class="form-group col-md-6 ">
@@ -169,8 +172,8 @@
                                 <div class="card-footer">
                                     <div class="float-right">
                                         
-                                        <button type="button" class="btn btn-primary btn-sm rounded-0" ng-click="cancel_form()">Cancel</button>
-                                        <button  ng-disabled="form_c.$invalid" type="submit" form="form_c" class="btn btn-primary btn-sm rounded-0" >Add new user</button>
+                                        <button type="button" class="btn btn-light btn-sm rounded-0 my-btn-add-user" ng-click="cancel_form()">Cancel</button>
+                                        <button  ng-disabled="form_c.$invalid" type="submit" form="form_c" class="btn btn-light btn-sm rounded-0 my-btn-add-user" >Add new user</button>
                                     </div>
                                 </div>
                             </div>
@@ -181,13 +184,30 @@
             </div>
         </div>
         
-        <div class="row h-25" style=" background: rgb(221, 221, 221);">
-            <div class="col-sm">
-                Footer
+        <div class="row bg-footer justify-content-between">
+            <div class="col-4 align-self-center text-center">
+                <div class="row justify-content-end">
+                    <div class="col-6">
+                        <a class="footer-link" href="#">Navigation link 1</a>
+                    </div>
+                    <div class="col-4">
+                        <a class="footer-link" href="#">Navigation link 2</a>
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-6">
+                        <a class="footer-link" href="#">Navigation link 3</a>
+                    </div>
+                    <div class="col-4">
+                        <a class="footer-link" href="#">Navigation link 4</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 align-self-center text-center">
+                <img class="img-invert-100" src="utils/images/Primary-navigation-logo.jpg">
             </div>
         </div>
     </div>
-    
 </div>
 
 <script src="utils/js/jquery.min.js"></script>
