@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" ng-app="app" ng-controller="MainCtrl"> 
+<head>  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="utils/css/bootstrap.min.css">
+    <link href="utils/icons/open-iconic-master/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="utils/css/styles.css">
+    <title>{{title}}</title>
+</head>
+<body  >
+    <div class="container-fluid font-weight-light" style="height: 100vh;" >
+        <div class="row mh-75" style="min-height: 75%">
+            <div class="col-sm-2 border-right">
+                <p class="text-center text-white bg-header">Logo</p>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Overview<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Analytics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Export</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="col-sm-10">
+                <div class="container-fluid">
+                    <div class="row bg-header2">
+                        <div class="col text-right">
+                            <div class="dropdown show">
+                                <a class="dropdown-toggle text-white oi oi-globe" style="text-decoration: none; vertical-align: top;" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Firstname Lastname</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">View Profile</a>
+                                    <a class="dropdown-item" href="#">Change Password</a>
+                                    <a class="dropdown-item" href="#">Logoff</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row" style="padding: 15px;">
+                        <div class="col-sm-12" ng-hide="isform">
+                            <div class="card">
+                                <div class="card-header">
+                                    Search User
+                                    <div class="float-right">
+                                        <button type="button" class="btn btn-primary btn-sm rounded-0" ng-click="open_form()"
+                                        >+ Add User</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="input-group search-bg" id="adv-search">
+                                        <input type="text" ng-model="searchText" class="form-control rounded-0" placeholder="Last name, first name, email" />
+                                        <button type="submit" class="btn btn-primary rounded-0">
+                                            <span class="oi oi-magnifying-glass" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <p>
+                                        <table class="table table-hover border-bottom">
+                                            <thead>
+                                                <tr class="text-white bg-dark" style=" font-style: inherit">
+                                                    <th style="width: 45%" scope="col">NAME</th>
+                                                    <th style="width: 45%" scope="col">EMAIL</th>
+                                                    <th style="width: 10%" scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="item in itens | filter:searchText">
+                                                    <td>{{item.firstname}} {{item.lastname}}</td>
+                                                    <td>{{item.email}}</td>
+                                                    <td>
+                                                        <button type="button" ng-click="update_item($index, item)" class="btn btn-light btn-sm">
+                                                            <span class="oi oi-pencil"></span>
+                                                        </button>
+                                                        <button type="button" ng-click="remove_item($index)"  class="btn btn-light btn-sm">
+                                                            <span class="oi oi-trash" aria-hidden="true"></span>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-12" ng-show="isform" >
+                            <div class="card">
+                                <div class="card-header">
+                                    Add User
+                                </div>
+                                
+                                <div class="card-body">
+                                    <div class="container">
+                                        <form id="form_c" name="form_c" ng-submit="save_form(form)" class="ng-pristine ng-valid" novalidate>
+                                            
+                                            <div class="row my-form">
+                                                <div class="form-group col-md-6" ng-class="{ 'has-error' : form_c.firstname.$invalid && form_c.firstname.$touched }">
+                                                    <label for="firstname">First Name</label>
+                                                    <input  type="text" ng-model="form.firstname" class="form-control rounded-0" id="firstname" name="firstname" aria-describedby="firstname" placeholder="FirstName MiddleName" required>
+                                                    <small id="firstname" class="form-text text-muted">This is a note about the field</small>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="lastname">Last Name</label>
+                                                    <input type="text" ng-model="form.lastname" class="form-control" id="lastname" placeholder="LastName">
+                                                    <small id="lastname" class="form-text text-muted">This is a note about the field</small>
+                                                </div>
+                                                
+                                                <div class="form-group col-md-6">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" ng-model="form.email" class="form-control" id="email" placeholder="name.lastname@email.com">
+                                                    <small id="email" class="form-text text-muted">This is a note about the field</small>
+                                                </div>
+                                                <div class="form-group col-md-6 ">
+                                                    <div class="container row">
+                                                        <div class="col-6">
+                                                            <label for="idFields">Fields</label>
+                                                            <fieldset class="form-group">
+                                                                <div class="form-check my-form-check" ng-class="{'checked': form.field == 'field'}">
+                                                                    <label class="form-check-label">
+                                                                        <input type="radio" ng-model="form.field" class="form-check-input" ng-model="field" name="optionsRadios1" value="field">
+                                                                        Field
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check my-form-check" ng-class="{'checked': form.field == 'office'}">
+                                                                    <label class="form-check-label">
+                                                                        <input type="radio" ng-model="form.field" class="form-check-input" ng-model="field" name="optionsRadios1" value="office">
+                                                                        Office
+                                                                    </label>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <label for="idFields">Role/s</label>
+                                                            <fieldset class="form-group">
+                                                                <div class="form-check my-form-check" ng-class="{'checked': form.role == 'user'}">
+                                                                    <label class="form-check-label">
+                                                                        <input type="radio" ng-model="form.role" class="form-check-input" ng-model="role" name="optionsRadios2" value="user">
+                                                                        User
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check my-form-check" ng-class="{'checked': form.role == 'admin'}">
+                                                                    <label class="form-check-label">
+                                                                        <input type="radio" ng-model="form.role" class="form-check-input" ng-model="role" name="optionsRadios2" value="admin">
+                                                                        Admin
+                                                                    </label>
+                                                                </div>
+                                                            </fieldset>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <span class="clearfix">
+                                                </span>
+                                            </div>
+                                            
+                                            
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="float-right">
+                                        
+                                        <button type="button" class="btn btn-primary btn-sm rounded-0" ng-click="cancel_form()">Cancel</button>
+                                        <button  ng-disabled="form_c.$invalid" type="submit" form="form_c" class="btn btn-primary btn-sm rounded-0" >Add new user</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="row h-25" style=" background: rgb(221, 221, 221);">
+            <div class="col-sm">
+                Footer
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script src="utils/js/jquery.min.js"></script>
+<script src="utils/js/angular.min.js"></script> 
+<script src="utils/js/popper.min.js"></script>
+<script src="utils/js/bootstrap.min.js"></script>
+<script src="utils/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+.my-form .form-group {
+    padding: 0 10px !important;
+}
+.my-form .form-group > input {
+    border-radius: 0!important;
+}
+.my-form-check {
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    background-color: white;
+    padding: 10px 30px;
+}
+.checked {
+    border-top: 1px solid red !important;
+    background-color: rgba(184, 184, 184, 0.459) !important;
+    border-bottom: 1px solid red !important;
+}
+.footer.fixed {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 10px 20px;
+    background: white;
+    border-top: 1px solid #e7eaec;
+    height: 20%;
+}
+.bg-header {
+    background: rgb(200, 2, 2);
+    padding: 5px 10px 5px 10px;
+    font-size: 22px;
+}
+.bg-header2 {
+    background: rgb(160, 8, 8);
+    padding-right: 20px;
+    font-size: 12px;
+}
+.search-bg {
+    padding: 10px;
+    background: rgb(221, 221, 221);
+    margin-right: 20px;
+}
+.nav-pills .nav-link {
+    border-radius: 0 !important;
+    color: black !important;
+}
+.nav-pills .nav-link.active {
+    background-color: #99999954;
+}
+.nav-link:hover {
+    background-color: #99999954;
+}
+.card {
+    border: 0 !important;
+    background: 0 !important;
+}
+.card .card-header {
+    border: 0 !important;
+    background: 0 !important;
+}
+.card .card-footer {
+    border: 0 !important;
+    background: 0 !important;
+}
